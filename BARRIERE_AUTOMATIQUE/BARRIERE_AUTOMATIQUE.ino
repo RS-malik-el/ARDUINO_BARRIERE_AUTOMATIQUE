@@ -90,13 +90,13 @@ void loop(){
 
 void gestion_porte(const bool etat){
 	if(etat == OPEN){
-		for (int i = servo.read(); i < HAUT; ++i){
+		for (int i = servo.read(); i <= HAUT; ++i){
 			servo.write(i);
 			delay(ATTENTE);
 		}
 	}
 	if (etat == CLOSE){
-		for (int i = servo.read(); i > BAS; --i){
+		for (int i = servo.read(); i >= BAS; --i){
 			servo.write(i);
 			delay(ATTENTE);
 		}
